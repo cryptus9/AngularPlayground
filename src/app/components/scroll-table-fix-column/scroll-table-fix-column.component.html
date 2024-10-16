@@ -1,0 +1,43 @@
+<div class="table" (scroll)="onTableScroll($event)" >
+  <table class="sort-table" >
+    <thead>
+    <tr>
+      <th class="sticky-column col" [ngClass]="isTableScrolled() ? 'scrolled' : ''">DATA1</th>
+      <th class="col">DATA2</th>
+      <th class="col">DATA3</th>
+      <th class="col">DATA4</th>
+      <th class="col">DATA5</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="row">
+      <td class="sticky-column data" [ngClass]="isTableScrolled() ? 'scrolled' : ''">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+    </tr>
+    <tr class="row">
+      <td class="sticky-column data" [ngClass]="isTableScrolled() ? 'scrolled' : ''">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+    </tr>
+    <tr class="row">
+      <td class="sticky-column data" [ngClass]="isTableScrolled() ? 'scrolled' : ''">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+    </tr>
+    <tr class="row">
+      <td class="sticky-column data" [ngClass]="isTableScrolled() ? 'scrolled' : ''">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+      <td class="data">Some values</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
