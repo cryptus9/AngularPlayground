@@ -1,0 +1,26 @@
+@if (dateRangeForm) {
+  <form>
+    <mat-form-field>
+      <mat-label>Enter a date range</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate formControlName="startDate" placeholder="Start date">
+        <input matEndDate formControlName="endDate" placeholder="End date">
+      </mat-date-range-input>
+      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker>
+        <mat-date-range-picker-actions>
+          <button mat-button matDateRangePickerCancel>Cancel</button>
+          <button mat-raised-button matDateRangePickerApply>Apply</button>
+          <button mat-button (click)="resetDateRange()">Reset</button>
+        </mat-date-range-picker-actions>
+      </mat-date-range-picker>
+    </mat-form-field>
+  </form>
+}
+
+
+
+<!-- Copyright 2024 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->
