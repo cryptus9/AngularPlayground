@@ -1,5 +1,5 @@
 @if (dateRangeForm) {
-  <form>
+  <form [formGroup]="dateRangeForm">
     <mat-form-field>
       <mat-label>Enter a date range</mat-label>
       <mat-date-range-input [rangePicker]="picker">
