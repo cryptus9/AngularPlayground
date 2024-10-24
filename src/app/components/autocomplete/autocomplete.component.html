@@ -1,0 +1,38 @@
+<form [formGroup]="profileForm">
+  <label for="phonePrefix">{{ 'reservation.labels.prefix' }}</label>
+  <div>
+    <div class="flag-img">
+      <img [src]="selectedCountryImage" alt="" />
+    </div>
+    <input
+      type="tel"
+      name="phonePrefix"
+      id="phonePrefix"
+      formControlName="phonePrefix"
+      (keydown)="validateNumber($event)"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      pattern="[+0-9]*"
+      autocomplete="new-password"
+      inputmode="numeric"
+    />
+  </div>
+  <div class="countries-prefix" *ngIf="showDropdown()" >
+    <div class="scrollable-content">
+      <ul>
+        <li
+          *ngFor="let country of countries | countryListFilter: profileForm.controls.phonePrefix.value"
+          (click)="onPrefixSelect(country.dialCodes)"
+          [class]="{ highlight: i === 0 }"
+        >
+          <span class="country-option">
+            {{ country.dialCodes }} {{ country.name }}
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p class="suggestion">
+    {{ 'reservation.suggestions.prefix' }}
+  </p>
+</form>
